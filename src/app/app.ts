@@ -1,14 +1,14 @@
 import { Component, signal } from '@angular/core';
 
 import { Admin } from './admin/admin';
-import { User } from "./user/user";
+import { User } from './user/user';
+import { DataBinding } from './data-binding/data-binding';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [Admin, User],
+  imports: [Admin, User, DataBinding],
   templateUrl: './app.html',
-  styleUrls: ['./app.css'],
+  styleUrl: './app.css',
 })
 export class App {
   protected readonly title = signal('angular20Tutorial');

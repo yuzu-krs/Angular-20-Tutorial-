@@ -1,0 +1,50 @@
+<table style="width: 100%">
+  <tr>
+    <!--補間バインディング{{}}値埋め込み-->
+    <td>{{ courseName }}</td>
+    <td>{{ productPrice }}</td>
+    <span>{{ courseName }}</span>
+    <td>
+      <!--tsで宣言していないので呼び出せない-> {{fullName}}-->
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <!--動的なプロパティは[]を用いるのが推奨されている以下の
+        使用方法でも動く場合がある-->
+      <input type="text" value="{{ courseName }}" />
+    </td>
+    <td>
+      <!--以下プロパティバインディング
+        動的の場合[]が必要。
+         type,typeなどのプロパティはそのまま使用可能
+         maxlengthなどの属性ではattr.を接頭辞として使用する  -->
+      <input [type]="inputType" [max]="maxLength" [minLength]="minChar" />
+    </td>
+    <td>
+      <p [class]="myClassName">This is Sample Page</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <!--イベントバインディング ()内にイベント名を記述-->
+      <button (click)="showWelcomeMessage()">Show Message</button>
+    </td>
+    <td>
+      <button (click)="changeCourseName()">Change Course Name</button>
+    </td>
+    <td>
+      <select (change)="onCityChange()">
+        <option valule="">Pune</option>
+        <option valule="">Nagpur</option>
+        <option valule="">Mumbai</option>
+      </select>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <!--双方向データバインディング [(ngModel)]-->
+      <input type="text" [(ngModel)]="courseName" />
+    </td>
+  </tr>
+</table>
