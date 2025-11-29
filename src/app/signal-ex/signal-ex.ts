@@ -1,6 +1,9 @@
 import { Component, signal } from '@angular/core';
 import { computed } from '@angular/core';
 
+// Signalの基本的な使い方の例
+// UIが変わるならSignalを使うべき
+// UIが変わらないなら普通のプロパティを使うべき(alertとかログとか)
 @Component({
   selector: 'app-signal-ex',
   imports: [],

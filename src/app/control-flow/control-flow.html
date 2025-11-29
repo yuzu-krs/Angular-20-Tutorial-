@@ -1,0 +1,81 @@
+<table>
+  <tr>
+    <td>
+      @if(isParaVisiable===true){
+      <span>Sample</span>
+      <p>This is Sample Para</p>
+      }@else {
+      <small>Small Tag</small>
+      <h3>isParaVisiable has False value</h3>
+      }
+    </td>
+    <td><button (click)="showP()">Show P</button></td>
+    <td><button (click)="hideP()">Hide P</button></td>
+  </tr>
+  <tr>
+    <td>
+      @if(startMonthName=='jan'){
+      <span>Januwary</span>
+      } @else if(startMonthName=='feb'){
+      <span>February</span>
+      } @else if(startMonthName=='mar'){
+      <span>March</span>
+      } @else if(startMonthName=='apr'){
+      <span>April</span>
+      } @else if(startMonthName=='may'){
+      <span>May</span>
+      }@else {
+      <span>Wrong Input</span>
+      }
+    </td>
+    <td>
+      <input type="text" [(ngModel)]="startMonthName" />
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <ul>
+        @for(item of cityList; track $index){
+        <li>{{ item }}</li>
+        }
+      </ul>
+    </td>
+    <td>
+      <select name="" id="">
+        @for(item of cityList; track $index){
+        <option value="">{{ item }}</option>
+        }
+      </select>
+    </td>
+  </tr>
+</table>
+
+<br />
+
+<table>
+  <thead>
+    <tr>
+      <th>Sr No</th>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for(item of studentList; track $index){
+    <tr>
+      <td>{{ $index + 1 }}</td>
+      <td>{{ item.name }}</td>
+      <td>{{ item.age }}</td>
+      <td>
+        @if(item.isActive){
+        <span>Active</span>
+        }@else {
+        <span>Inactive</span>
+        }
+      </td>
+    </tr>
+
+    }
+  </tbody>
+</table>
