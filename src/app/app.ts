@@ -6,9 +6,11 @@ import { DataBinding } from './data-binding/data-binding';
 import { SignalEx } from './signal-ex/signal-ex';
 import { ControlFlow } from './control-flow/control-flow';
 
+import { RouterLink, RouterOutlet } from '@angular/router';
+
 @Component({
   selector: 'app-root',
-  imports: [ControlFlow],
+  imports: [ControlFlow, RouterLink, RouterOutlet],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
