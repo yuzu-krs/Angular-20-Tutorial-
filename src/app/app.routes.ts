@@ -4,6 +4,7 @@ import { ControlFlow } from './control-flow/control-flow';
 import { DataBinding } from './data-binding/data-binding';
 import { SignalEx } from './signal-ex/signal-ex';
 import { AttDirective } from './att-directive/att-directive';
+import { GetApi } from './get-api/get-api';
 
 export const routes: Routes = [
   {
@@ -25,5 +26,9 @@ export const routes: Routes = [
   {
     path: 'attribute-dir',
     component: AttDirective,
+  },
+  {
+    path: 'get-api',
+    component: GetApi,
   },
 ];
